@@ -114,8 +114,6 @@
                                                                              withReuseIdentifier:[JSQMessagesLoadEarlierHeaderView headerReuseIdentifier]
                                                                                     forIndexPath:indexPath];
 
-    headerView.loadButton.tintColor = self.loadEarlierMessagesHeaderTextColor;
-    headerView.delegate = self;
 
     return headerView;
 }
