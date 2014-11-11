@@ -17,11 +17,22 @@
 //
 
 #import "JSQMessagesCollectionViewCell.h"
-
+#import "JSQMessage+MessageProtocol.h"
+@class JSQMessage;
 /**
  *  A `JSQMessagesCollectionViewCellOutgoing` object is a concrete instance 
  *  of `JSQMessagesCollectionViewCell` that represents an outgoing message data item.
  */
+//{@"state",kMessageIndicator}
+extern  NSString * const kNotificationUpdateState;
+
+@protocol JSQMessagesCollectionViewCellOutgoingDelegate <NSObject>
+-(void)resendMessage:(JSQMessage*)message;
+@end
+
 @interface JSQMessagesCollectionViewCellOutgoing : JSQMessagesCollectionViewCell
-@property (weak, nonatomic) IBOutlet UIButton *buttonResend;
+-(void)refreshIndicatorView;
+@property (nonatomic,assign) kIndicatorState indicatorState;
+@property (nonatomic,weak) JSQMessage * jsqMessage;
+@property (nonatomic,weak) id<JSQMessagesCollectionViewCellOutgoingDelegate> resendDelegate;
 @end
