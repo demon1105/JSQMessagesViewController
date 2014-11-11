@@ -229,7 +229,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     
     if (self.automaticallyScrollsToMostRecentMessage) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self scrollToBottomAnimated:NO];
+//            [self scrollToBottomAnimated:NO]; we don't need scroll to bottom automatically every time.
             [self.collectionView.collectionViewLayout invalidateLayoutWithContext:[JSQMessagesCollectionViewFlowLayoutInvalidationContext context]];
         });
     }
