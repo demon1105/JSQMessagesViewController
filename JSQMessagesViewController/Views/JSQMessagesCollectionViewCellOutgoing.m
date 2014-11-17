@@ -28,6 +28,11 @@ NSString * const kNotificationUpdateState       = @"kNotificationUpdateState";
 
 #pragma mark - Overrides
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
