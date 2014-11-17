@@ -32,7 +32,6 @@ extern  NSString * const kNotificationUpdateState;
 
 @interface JSQMessagesCollectionViewCellOutgoing : JSQMessagesCollectionViewCell
 -(void)refreshIndicatorView;
-@property (nonatomic,assign) kIndicatorState indicatorState;
 @property (nonatomic,weak) JSQMessage * jsqMessage;
 @property (nonatomic,weak) id<JSQMessagesCollectionViewCellOutgoingDelegate> resendDelegate;
 @end
